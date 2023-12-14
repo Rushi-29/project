@@ -11,11 +11,16 @@ export class MovieDetailsComponent implements OnInit{
 
    data!:any;
    user:string="Leave the World Behind"
+   selectedMovie:any;
 
   constructor(private movieService:MovieServiceService, private activateRoute:ActivatedRoute){}
   ngOnInit(): void {
 
-    this.movieService.getByName(this.user).subscribe(a => this.data =a.results);
+    this.movieService.getSelectedMovie().subscribe((movie) => {
+      this.selectedMovie = movie.title;
+    });
+
+    this.movieService.getByName(this.selectedMovie).subscribe(a => this.data =a.results);
   //  const name= this.activateRoute.snapshot.paramMap.get('query');
   //  console.log(name);
   }

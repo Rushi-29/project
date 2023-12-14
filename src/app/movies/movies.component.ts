@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieServiceService } from '../servcies/movie-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movies',
@@ -11,11 +12,15 @@ export class MoviesComponent implements OnInit {
   data!:any[] ;
 
 
-  constructor(private movieServcice : MovieServiceService) {}
+  constructor(private  router: Router ,private movieServcice : MovieServiceService) {}
   ngOnInit(): void {
 
-    this.movieServcice.getAllCourses().subscribe(a => setTimeout(()=>{this.data=a.results},1000) )
+    this.movieServcice.loadMovies().subscribe(a => setTimeout(()=>{this.data=a.results},1000) )
 
+  }
+  OnClick(movie:any){
+    this.movieServcice.setSelectedMovie(movie);
+    this.router.navigate(["/details"])
   }
 
 }

@@ -14,14 +14,23 @@ import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
-
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule  } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { WeeklyTrendingComponent } from './weekly-trending/weekly-trending.component';
+import { FooterComponent } from './footer/footer.component';
+import {MatTableDataSource} from '@angular/material/table';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     MoviesComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    WeeklyTrendingComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +42,12 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
     MatGridListModule,
     MatCardModule,
     HttpClientModule,
+    MatSlideToggleModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatDividerModule
+    
 
   ],
   providers: [],

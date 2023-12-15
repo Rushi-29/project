@@ -8,17 +8,27 @@ import { Router, Routes } from '@angular/router';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css']
 })
-export class NavBarComponent {
+export class NavBarComponent  {
+
+  
+ isAdult:boolean = true;
+
+ constructor( private router: Router) {}
+
+changed(isAdult:boolean ) {
+     this.router.navigate(['/home', isAdult])
+}
 
 
 
-  constructor( private router: Router) {}
+ 
 
   
 onClick() {
  this.router.navigate(['/home']);
 
 }
+
 
 
 

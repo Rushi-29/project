@@ -76,14 +76,8 @@
   .card-content {
     display: flex;
     align-items: center;
-    color: #fff;
   }
-  mat-card-subtitle{
-    color: #fff;
-  }
-  .at-slide-toggle {
-    justify-content: center;
-  }
+  
   
   
   .course-image {
@@ -110,3 +104,6 @@
   color: aqua;
   background-color: #da0404;
 }
+mat-card-subtitle{
+    color: #fff;
+  }

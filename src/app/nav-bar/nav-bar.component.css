@@ -1,15 +1,24 @@
 .navbar-dark .nav-item .nav-link {
-    color: #fff;
-  }
-  
-  .navbar-dark .nav-item .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-    border-radius: 0.25rem;
-    color: #fff;
-  }
-  
-  .fa-li {
-    position: relative;
-    left: 0;
-  }
+  color: #fff;
+}
+
+.navbar-dark .nav-item .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  border-radius: 0.25rem;
+  color: #fff;
+}
+
+.fa-li {
+  position: relative;
+  left: 0;
+}
+
+.mat-mdc-slide-toggle .mdc-label {
+  font-family: var(--mat-slide-toggle-label-text-font);
+  font-size: var(--mat-slide-toggle-label-text-size);
+  letter-spacing: var(--mat-slide-toggle-label-text-tracking);
+  line-height: var(--mat-slide-toggle-label-text-line-height);
+  font-weight: var(--mat-slide-toggle-label-text-weight);
+  color: white;
+}

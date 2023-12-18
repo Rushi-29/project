@@ -5,7 +5,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { WeeklyTrendingComponent } from './weekly-trending/weekly-trending.component';
 
 const routes: Routes = [
-  {path:"",component:MoviesComponent},
+  {path:"",redirectTo:"daily", pathMatch:'full'},
 {path:"daily" , component:MoviesComponent},
 {path:"details/:id", component:MovieDetailsComponent},
 {path :"weekly", component:WeeklyTrendingComponent}

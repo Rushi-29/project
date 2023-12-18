@@ -22,6 +22,8 @@ import { WeeklyTrendingComponent } from './weekly-trending/weekly-trending.compo
 import { FooterComponent } from './footer/footer.component';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatDividerModule} from '@angular/material/divider';
+import { ReviewComponent } from './movie-details/review/review.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MoviesComponent,
     MovieDetailsComponent,
     WeeklyTrendingComponent,
-    FooterComponent
+    FooterComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatDividerModule
+    MatDividerModule,
+    MatDialogModule
     
 
   ],

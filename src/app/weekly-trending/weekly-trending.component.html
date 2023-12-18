@@ -1,9 +1,16 @@
-<mat-slide-toggle (click)="is18PlusFilter = !is18PlusFilter" class=""
-  >Are you 18+</mat-slide-toggle>
-  <div></div>
+<div class="filter-container">
+  <mat-form-field class="filter-field">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search Here..." #input>
+  </mat-form-field>
+
+  <div class="toggle-container">
+    <mat-slide-toggle (change)="toggle18PlusFilter()">Are you 18+</mat-slide-toggle>
+  </div>
+</div>
 
 <div class="card-container">
-  <div *ngFor="let movie of data" class="card">
+  <div *ngFor="let movie of  getVisibleMovies()" class="card">
     <div *ngIf="movie.adult == is18PlusFilter">
       <mat-card class="example-card">
         <mat-card-header>
@@ -13,7 +20,7 @@
             <mat-card-subtitle
             >Rating:{{ movie.vote_average |number : '1.1-1' }}/10</mat-card-subtitle
           >
-            <img
+            <img (click)="onClick(movie)"
               mat-card-xl-image
               src="https://image.tmdb.org/t/p/w342{{ movie.poster_path }}"
             />
@@ -25,4 +32,8 @@
       </mat-card>
     </div>
   </div>
+</div>
+<div style="margin-left: 50%;">
+  <button *ngIf="!visibleMovies" type="button" class="btn btn-outline-success btn-rounded" mdbRipple rippleColor="dark" (click)="showMore()">Show More...</button>
+<button *ngIf="visibleMovies" type="button" class="btn btn-outline-danger btn-rounded" mdbRipple rippleColor="dark" (click)="showMore()">Show Less...</button>
 </div>

@@ -7,8 +7,11 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class MovieServiceService{
 
-  allMovie="https://api.themoviedb.org/3/trending/movie/day?api_key=17031c1a6135146fa1083d1385d453c0"
 
+
+  allMovie="https://api.themoviedb.org/3/trending/movie/day?api_key=17031c1a6135146fa1083d1385d453c0"
+  byName="https://api.themoviedb.org/3/search/movie?api_key=17031c1a6135146fa1083d1385d453c0&query="
+  weekly="https://api.themoviedb.org/3/trending/movie/week?api_key=17031c1a6135146fa1083d1385d453c0"
   private movie = new BehaviorSubject<any>(null);
   movie$=this.movie.asObservable();
 
@@ -18,16 +21,13 @@ export class MovieServiceService{
     this.movie.next(movies);
   }
 
-  // loadMovies():Observable<any>{
-  //    return this.client.get<any>(`${this.allMovie}`);
-  // }
   loadMovies():Observable<any>{
     
-    return this.client.get<any>( `https://api.themoviedb.org/3/trending/movie/day?api_key=17031c1a6135146fa1083d1385d453c0`)
+    return this.client.get<any>( `${this.allMovie}`)
    }
 
    getByName(title:any):Observable<any>{
-    return this.client.get<any>(`https://api.themoviedb.org/3/search/movie?api_key=17031c1a6135146fa1083d1385d453c0&query=${title}`)
+    return this.client.get<any>(`${this.byName}${title}`)
    }
 
    getByMovieId(movieId:any):Observable<any>{
@@ -39,7 +39,7 @@ export class MovieServiceService{
    }
 
    weeklytrending() : Observable<any>{
-    return this.client.get<any>(`https://api.themoviedb.org/3/trending/movie/week?api_key=17031c1a6135146fa1083d1385d453c0`)
+    return this.client.get<any>(`${this.weekly}`)
 
    }
 }

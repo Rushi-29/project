@@ -1,50 +1,4 @@
-/* mat-grid-tile {
-    background: lightblue;
-  } */
 
-  /* .example-card {
-    max-width: 400px;
-  }
-  
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  } */
-  /* Custom styles for the card layout */
-/* 
-  
-  
- 
-  
-  .card-content {
-    display: flex;
-    align-items: center;
-  }
-  
-  
-  
-  .course-image {
-    width: 100%;
-    height: auto;
-    max-height: 200px; 
-    object-fit: cover; 
-  }
-  
-  .course-details {
-    flex: 1;
-  }
-  
-  .card-actions {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-  } */
-   /* .body{
-    background: linear-gradient(to right, darkblue,red);
-   } */
    .example-card {
     background-color: black;
     width: 400px;
@@ -109,4 +63,18 @@
   padding: 8px;
   color: aqua;
   background-color: #da0404;
+}
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.filter-field {
+  margin-right: 16px; 
+}
+
+.toggle-container {
+  margin-left: auto;
 }

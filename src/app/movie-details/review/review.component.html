@@ -1,0 +1,37 @@
+<div >
+<h2 mat-dialog-title>Review</h2>
+  <mat-dialog-content class="mat-typography ">
+    <section>
+        <br />
+        <mat-divider></mat-divider>
+        <br />
+        <!-- <h1>Review</h1> -->
+        <div class="container my-2 mx-2 ">
+          <div *ngIf="reviews.length > 0; else noReviews">
+            <ng-container *ngFor="let review of reviews">
+              <mat-card class="display mx-2">
+                <mat-card-header>
+                  <mat-card-title>{{ review.author_details.name }}</mat-card-title>
+                  <mat-card-subtitle
+                    ><h2>
+                      Rating: {{ review.author_details.rating }} /10
+                    </h2></mat-card-subtitle
+                  >
+                </mat-card-header>
+                <div>{{ review.content }}</div>
+                <mat-card-actions>
+                  <button mat-button>LIKE</button>
+                </mat-card-actions>
+              </mat-card>
+            </ng-container>
+          </div>
+          <ng-template #noReviews>
+            <h3><strong>No Review</strong></h3>
+          </ng-template>
+        </div>
+      </section>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+  </mat-dialog-actions>
+</div>
